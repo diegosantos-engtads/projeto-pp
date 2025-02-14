@@ -13,7 +13,7 @@ const Home = () => {
         <p>Iniciando as boas praticas em um projeto modelo.</p>
       </Main>
       <Footer>
-        <CopyRight>Desenvolvido por Diego Santos | Site Projeto PP</CopyRight>
+        <CopyRight>Desenvolvido por Diego Santos \| Site Projeto PP</CopyRight>
       </Footer>
     </>
   );
