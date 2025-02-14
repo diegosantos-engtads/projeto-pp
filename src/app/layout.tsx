@@ -2,10 +2,20 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// import { Lukinha } from "next/font/google";
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+// const fontLukinha = fonte({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+//   weight: [["100", "200", "300", "400", "500", "600", "700", "800", "900"]]
+// })
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -23,8 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt_BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+
+      {/* <body className={lukinha.className}>
+        <SideMenu />
+
+        {children}
+      </body> */}
+
         {children}
       </body>
     </html>

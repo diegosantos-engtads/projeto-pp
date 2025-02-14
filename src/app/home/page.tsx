@@ -5,6 +5,9 @@ import { Header, Main, Footer, Title, CopyRight } from './styled';
 const Home = () => {
   return (
     <>
+    <header>
+      <h1>Home</h1>
+    </header>
       <Header>
         <Title>Projeto PP</Title>
       </Header>
