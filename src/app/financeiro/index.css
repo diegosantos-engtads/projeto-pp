@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  align-items: center;
+  padding: 0 24px 0;
+  border-bottom: 1px solid #e4e4e4;
+  height: 80px;
+
+  h1 {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--secondTextColor);
+  }
+}

@@ -1,9 +1,12 @@
+'use client'
+import "./index.css"
+
 const Stock = () => {
   return (
     <>
-    <div>
+    <header>
       <h1>Estoque</h1>
-    </div>
+    </header>
     </>
   );
 }

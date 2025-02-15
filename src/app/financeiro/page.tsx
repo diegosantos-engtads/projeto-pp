@@ -1,9 +1,11 @@
+import "./index.css";
+
 const Financial = () => {
   return (
     <>
-    <div>
+    <header>
       <h1>Financeiro</h1>
-    </div>
+    </header>
     </>
   );
 }

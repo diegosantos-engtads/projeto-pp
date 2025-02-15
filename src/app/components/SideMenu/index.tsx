@@ -1,56 +1,43 @@
 "use client";
 
-import { CopyRight, Footer, Header, Main, Title } from "@/app/home/styled";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LuHouse , LuLayers, LuWalletCards } from "react-icons/lu";
+import NavItem, { NavItemInterface } from "../NavItem";
+import "./index.css";
 
 const SideMenu = () => {
-
+  const pathname = usePathname();
 
   const items: NavItemInterface[] = [
-    { url: "/", label: "Home" },
-    { url: "/stock", label: "Estoque" },
-    { url: "/financial", label: "Financeiro" },
-];
-
-
+    { url: "/home", label: "Home", icon: <LuHouse  size={24} /> },
+    { url: "/estoque", label: "Estoque", icon: <LuLayers size={24} /> },
+    { url: "/financeiro", label: "Financeiro", icon: <LuWalletCards size={24} /> },
+  ];
 
   return (
-    <>
-    <header>
-      <nav className="navBar">
-        <Link href="/" className="logo-marca">
-          <a>Meu PDV</a>
+    <div className="SideMenu">
+      <div>
+        <Link href="/home" className="logo">
+          Meu PDV
         </Link>
+      </div>
+
+      <nav className="navBar">
+        <ul>
+          {items.map((item) => (
+            <NavItem
+              key={item.url}
+              url={item.url}
+              label={item.label}
+              icon={item.icon}
+              isActive={pathname === item.url || pathname.startsWith(item.url + "/")}
+            />
+          ))}
+        </ul>
       </nav>
-      <ul className="nav-items">
-        {items.map((item) => (
-          <NavItem
-            key={item.url}
-            url={item.url}
-            label={item.label}
-          />
-        ))}
-      </ul>
-
-      <h1>Home</h1>
-
-
-
-    </header>
-
-
-      {/* <Header>
-        <Title>Projeto PP</Title>
-      </Header>
-      <Main>
-        <h2>Bem-vindo ao Projeto PP!</h2>
-        <p>Iniciando as boas praticas em um projeto modelo.</p>
-      </Main>
-      <Footer>
-        <CopyRight>Desenvolvido por Diego Santos \|/ Site Projeto PP</CopyRight>
-      </Footer> */}
-    </>
+    </div>
   );
-}
+};
 
 export default SideMenu;
